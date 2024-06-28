@@ -25,12 +25,14 @@ const App = () => {
               <Route path="/login" element={<Loginpage />} />
               <Route path="/register" element={<Register />} />
               <Route path="/forgotpassword" element={<Forgotpwd />} />
-              <Route path="/landingpage" element={<Landing />} />
+              <Route path="/dashboard" element={<Landing />} />
               <Route path="/resetpassword/:str" element={<Resetpwd />} />
               <Route
               path="/activate-user/:str"
               element={<ConfirmRegistration />}
             />
+             <Route path="/createshorturl" element={<CreateShortUrl />} />
+             <Route path="/urllists" element={<ListURLS />} />
             </Routes>
           </BrowserRouter>
         </Container>

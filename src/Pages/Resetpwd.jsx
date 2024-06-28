@@ -19,7 +19,7 @@ const Resetpwd = () => {
   }, []);
   const fetchdata = async () => {
     await axios
-      .get(`https://resetpassword-xpk9.onrender.com/api/user/checkstring/${str}`)
+      .get(`${apiurl}/user/checkstring/${str}`)
       .then((res) => {
         setData(res.data.result)
         setUsername(res.data.result.username)

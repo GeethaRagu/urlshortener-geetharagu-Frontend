@@ -19,7 +19,7 @@ const Loginpage = () => {
       .post(`${apiurl}/user/signin`, payload)
       .then((res) => {
         toast.success(res.data.message)
-        navigate("/landingpage");
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.log(error);
