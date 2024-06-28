@@ -28,7 +28,7 @@ const App = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/forgotpassword" element={<Forgotpwd />} />
               <Route path="/dashboard" element={<Landing />} />
-              <Route path="/resetpassword/:str" element={<Resetpwd />} />
+              <Route path="/reset-password/:str" element={<Resetpwd />} />
               <Route
               path="/activate-user/:str"
               element={<ConfirmRegistration />}
