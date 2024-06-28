@@ -10,6 +10,8 @@ import Landing from "./Pages/Landing";
 import Resetpwd from "./Pages/Resetpwd";
 import { ToastContainer } from "react-toastify";
 import ConfirmRegistration from "./Pages/ConfirmRegistration";
+import CreateShortUrl from "./Pages/CreateShortUrl";
+import ListURLS from "./Pages/ListURLS";
 
 const App = () => {
   return (
