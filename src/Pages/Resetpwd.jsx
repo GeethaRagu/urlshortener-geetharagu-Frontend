@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Resetpwd = () => {
-  const [username, setUsername] = useState(" ");
+ 
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
 
@@ -22,7 +22,7 @@ const Resetpwd = () => {
       .get(`${apiurl}/user/checkstring/${str}`)
       .then((res) => {
         setData(res.data.result)
-        setUsername(res.data.result.username)
+      
         setEmail(res.data.result.email)
         //toast.success(res.data.message)
        
@@ -37,7 +37,7 @@ const Resetpwd = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = { username, email, password };
+    const payload = { email, password };
    // console.log(payload);
     await axios
       .post(`${apiurl}/user/reset-password`, payload)
@@ -58,18 +58,7 @@ const Resetpwd = () => {
         <div className="login_container">
           <h1>Reset password</h1>
           <form onSubmit={handleSubmit}>
-            <div className="input_container ri-user-fill">
-              <label for="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Username"
-                required
-                value={data.username}
-               readonly
-              />
-            </div>
+           
             <div className="input_container ri-mail-fill">
               <label for="email">Email</label>
               <input
