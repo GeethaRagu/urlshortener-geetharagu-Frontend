@@ -14,10 +14,7 @@ const Forgotpwd = () => {
 
     const payload = { email };
     await axios
-      .post(
-        `${apiurl}/user/forgot-password`,
-        payload
-      )
+      .post(`${apiurl}/user/forgot-password`, payload)
       .then((res) => {
         toast.success(res.data.message);
         navigate("/");
@@ -28,13 +25,12 @@ const Forgotpwd = () => {
       });
   };
   return (
-    <div>
-      <section className="centre_container opacity-75">
-        <div className="login_container">
-          <h1>Forgot Password</h1>
-
+    <section className="bg-primary py-3 py-md-5 py-xl-8">
+      <div className="container">
+        <div className="h-100 d-flex flex-row align-items-center justify-content-center">
           <form onSubmit={handleSubmit}>
-            <div className="input_container ri-mail-fill">
+            <h1>Forgot Password</h1>
+            <div className="input_container ri-mail-fill mt-5">
               <label for="email">Email</label>
               <input
                 type="email"
@@ -51,8 +47,8 @@ const Forgotpwd = () => {
           </form>
           <h6>Password link will be send to your Email id.Check your inbox</h6>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

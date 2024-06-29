@@ -2,8 +2,11 @@ body{
       color:white;
 }
 .main_container{
-  background-color:#9B606F !important;
+ /* background-color:#9B606F !important;*/
   min-height:100vh;
+}
+.container{
+  min-height: 100vh;
 }
 .centre_container{
   display: inline-block;

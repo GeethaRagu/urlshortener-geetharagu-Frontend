@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Resetpwd = () => {
- 
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
 
@@ -21,13 +20,11 @@ const Resetpwd = () => {
     await axios
       .get(`${apiurl}/user/check-str/${str}`)
       .then((res) => {
-        setData(res.data.result)
-      
-        setEmail(res.data.result.email)
+        setData(res.data.result);
+
+        setEmail(res.data.result.email);
         //toast.success(res.data.message)
-       
-    }
-    )
+      })
       .catch((error) => {
         console.log(error);
         toast.error(error.response.data.message);
@@ -38,28 +35,25 @@ const Resetpwd = () => {
     e.preventDefault();
 
     const payload = { email, password };
-   console.log(payload);
+    //console.log(payload);
     await axios
       .post(`${apiurl}/user/reset-password`, payload)
       .then((res) => {
-        
-        toast.success(res.data.message)
-        navigate('/login')
-  })
+        toast.success(res.data.message);
+        navigate("/login");
+      })
       .catch((error) => {
         console.log(error);
         toast.error(error.response.data.message);
       });
-
   };
   return (
-    <div>
-      <section className="centre_container opacity-75">
-        <div className="login_container">
-          <h1>Reset password</h1>
+    <section className="bg-primary py-3 py-md-5 py-xl-8">
+      <div className="container">
+        <div className="h-100 d-flex flex-row align-items-center justify-content-center">
           <form onSubmit={handleSubmit}>
-           
-            <div className="input_container ri-mail-fill">
+            <h1>Reset password</h1>
+            <div className="input_container ri-mail-fill mt-5">
               <label for="email">Email</label>
               <input
                 type="email"
@@ -68,7 +62,7 @@ const Resetpwd = () => {
                 placeholder="Email"
                 required
                 value={data.email}
-               readonly
+                readonly
               />
             </div>
             <div className="input_container ri-lock-password-fill">
@@ -85,10 +79,9 @@ const Resetpwd = () => {
             </div>
             <Button type="submit">Reset password</Button>
           </form>
-          
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

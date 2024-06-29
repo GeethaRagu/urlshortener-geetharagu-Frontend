@@ -3,10 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const [firstname,setFirstname] = useState();
+  const [firstname, setFirstname] = useState();
   const [lastname, setLastname] = useState(" ");
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
@@ -16,33 +16,34 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = { firstname,lastname, email, password };
+    const payload = { firstname, lastname, email, password };
     await axios
       .post(`${apiurl}/user/signup`, payload)
       .then((res) => {
-        toast.success(res.data.message)
-        navigate("/login");
-      } )
+        toast.success(res.data.message);
+        navigate("/");
+      })
       .catch((error) => {
         console.log(error);
         toast.error(error.response.data.message);
       });
 
-      setEmail(' ');
-      setPassword(' ');
-      setFirstname(' ');
-      setLastname(' ');
+    setEmail(" ");
+    setPassword(" ");
+    setFirstname(" ");
+    setLastname(" ");
     // setTimeout(() => {
     //   navigate("/login");
     // }, 1000);
   };
   return (
-    <div>
-      <section className="centre_container opacity-75">
-        <div className="login_container">
-          <h1>Register</h1>
+    <section className="bg-primary py-3 py-md-5 py-xl-8">
+      <div className="container">
+        <div className="h-100 d-flex flex-row align-items-center justify-content-center">
+         
           <form onSubmit={handleSubmit}>
-            <div className="input_container ri-user-fill">
+          <h1>Register Here</h1>
+            <div className="input_container ri-user-fill mt-5">
               <label htmlFor="firstname">Firstname</label>
               <input
                 type="text"
@@ -90,12 +91,11 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <Button type="submit">Register</Button>
+            <Button type="submit" className="bg-primary border border-radius">Register</Button>
           </form>
-        
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
