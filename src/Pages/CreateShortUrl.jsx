@@ -53,7 +53,7 @@ const CreateShortUrl = () => {
                   <td className="font-medium italic p-3 mt-5 bg-primary text-white">
                     {data.newUrl && (
                       <Link
-                        to={`https://urlshortener-backend-yzob.onrender.com/api/url/${data.newUrl.urlId}`}
+                        to={`${apiurl}/url/${data.newUrl.urlId}`}
                         className="hover:underline text-white"
                       >
                         {data.newUrl && data.newUrl.shortUrl}
