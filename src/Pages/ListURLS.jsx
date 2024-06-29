@@ -40,7 +40,7 @@ const ListURLS = () => {
                   </td>
                   <td className="w-15 text-pretty p-4 ">
                     <Link
-                      to={`https://urlshortener-backend-yzob.onrender.com/api/url/${ele.urlId}`}
+                      to={`${apiurl}/url/${ele.urlId}`}
                       className="hover:underline"
                     >
                       {ele.shortUrl}
