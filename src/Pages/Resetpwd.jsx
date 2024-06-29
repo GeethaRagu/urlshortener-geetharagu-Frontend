@@ -40,7 +40,7 @@ const Resetpwd = () => {
       .post(`${apiurl}/user/reset-password`, payload)
       .then((res) => {
         toast.success(res.data.message);
-        navigate("/login");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
