@@ -19,7 +19,7 @@ const Resetpwd = () => {
   }, []);
   const fetchdata = async () => {
     await axios
-      .get(`${apiurl}/user/checkstring/${str}`)
+      .get(`${apiurl}/user/check-str/${str}`)
       .then((res) => {
         setData(res.data.result)
       
