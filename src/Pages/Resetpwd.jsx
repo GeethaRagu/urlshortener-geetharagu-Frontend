@@ -38,7 +38,7 @@ const Resetpwd = () => {
     e.preventDefault();
 
     const payload = { email, password };
-   // console.log(payload);
+   console.log(payload);
     await axios
       .post(`${apiurl}/user/reset-password`, payload)
       .then((res) => {
