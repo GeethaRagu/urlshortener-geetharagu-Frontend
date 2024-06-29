@@ -19,7 +19,7 @@ const ConfirmRegistration = () => {
       .post(`${apiurl}/user/activate-user/${str}`, payload)
       .then((res) => {
         toast.success(res.data.message);
-        navigate("/landingpage");
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.log(error);

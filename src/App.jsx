@@ -35,7 +35,7 @@ const App = () => {
             />
              <Route path="/createshorturl" element={<CreateShortUrl />} />
              <Route path="/urllists" element={<ListURLS />} />
-             <Route path="/landing" element={<Landing />} />
+            
             </Routes>
           </BrowserRouter>
         </Container>
